@@ -1,0 +1,71 @@
+button {
+    margin: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Oxanium', cursive;
+    font-size: 100%;
+}
+
+.size {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-align:center;
+}
+
+.speed  {
+    width: 40px;
+    height: 30px;
+    text-align:center;
+}
+
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Oxanium', cursive;
+    padding: 1%;
+    position: sticky;
+    text-align: center;
+    font-size: 200%;
+}
+
+.menu {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
+    justify-items: stretch;
+    height: 100%;
+    padding: 1% 20%;
+    box-shadow: 0 0 10px 0 #6a6a6a;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px
+}
+
+.filter {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.filter input {
+    border: 1px solid grey;
+    border-radius: 50% 50%;
+}
+
+.menu button {
+    width: 100px;
+    height: fit-content;
+    align-self: center;
+    padding: 5px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
