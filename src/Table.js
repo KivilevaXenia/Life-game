@@ -3,7 +3,13 @@ import './Table.css';
 import Button from "./Button";
 
 export default function Table(props) {
-    const [squares, setSquares] = useState(null);
+    let initialSquares = [
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+    ];
+    const [squares, setSquares] = useState(initialSquares);
     let isLaunched = props.isLaunched;
     let isClear = props.isClear;
     let setClear = props.setClear;
@@ -27,53 +33,56 @@ export default function Table(props) {
 
     function getSquares() {
         let newSquares = [];
-        for (let i = 0; i < squares.length; i++) {
-            newSquares[i] = squares[i].slice();
+        if (squares) {
+            for (let i = 0; i < squares.length; i++) {
+                newSquares[i] = squares[i].slice();
+            }
         }
+
         return newSquares;
     }
 
     useEffect(() => {
-        let result = squares? getSquares() : [];
+        let result = getSquares();
         let length = props.length - result.length;
         let initRes = result[0] ? result[0].length : 0;
         let width = props.width - initRes;
 
         if (squares) {
-            if (!squares.length ) {
+            if (!squares.length) {
                 setSquares([]);
-            }
-        } else {
-            if (length > 0) {
-                for (let i = 0; i < length; i++) {
-                    result.push([]);
-                    for (let i = 0; i < props.width; i++) {
-                        result[result.length - 1].push(false);
+            } else {
+                if (length > 0) {
+                    for (let i = 0; i < length; i++) {
+                        result.push([]);
+                        for (let i = 0; i < props.width; i++) {
+                            result[result.length - 1].push(false);
+                        }
                     }
                 }
-            }
-            if (length < 0) {
-                for (let i = squares.length; i > squares.length + length; i--) {
-                    result.pop();
+                if (length < 0) {
+                    for (let i = squares.length; i > squares.length + length; i--) {
+                        result.pop();
+                    }
                 }
-            }
 
-            if (props.width > result[0].length) {
-                for (let j = 0; j < result.length; j++) {
-                    for (let i = 0; i < width; i++) {
-                        result[j].push(false);
+                if (props.width > result[0].length) {
+                    for (let j = 0; j < result.length; j++) {
+                        for (let i = 0; i < width; i++) {
+                            result[j].push(false);
+                        }
                     }
                 }
-            }
-            if (props.width < result[0].length) {
-                for (let j = 0; j < result.length; j++) {
-                    for (let i = result[j].length; i > result.length + width; i--) {
-                        result[j].pop();
+                if (props.width < result[0].length) {
+                    for (let j = 0; j < result.length; j++) {
+                        for (let i = result[j].length; i > result.length + width; i--) {
+                            result[j].pop();
+                        }
                     }
                 }
-            }
 
-            setSquares(result);
+                setSquares(result);
+            }
         }
     }, [props.width, props.length]);
 
