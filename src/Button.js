@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useLayoutEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Button.css';
 
 export default function Button(props) {
-    let num = props.number - 1;
     let index = props.index;
     let count = props.count;
     const [isFill, setFill] = useState(null);
