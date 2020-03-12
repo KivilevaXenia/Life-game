@@ -5,4 +5,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Life-Game](https://kivilevaxenia.github.io/lifegame/)
 
 <br />
-![Screenshot of the game] (screenshot/lifegame.png)
+![Screenshot of the game](screenshot/lifegame.png)
