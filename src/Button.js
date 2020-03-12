@@ -2,9 +2,12 @@ import React, {useState, useEffect} from 'react';
 import './Button.css';
 
 export default function Button(props) {
+    const [isFill, setFill] = useState(null);
+
     let index = props.index;
     let count = props.count;
-    const [isFill, setFill] = useState(null);
+    let className = isFill? 'fill' : '';
+
 
     useEffect(() => {
         if (props.squares) {
@@ -13,8 +16,6 @@ export default function Button(props) {
             }
         }
     }, [props.squares]);
-
-    let className = isFill? 'fill' : '';
 
     return (
         <button className={`button ${className}`}

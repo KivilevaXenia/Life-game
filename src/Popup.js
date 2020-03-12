@@ -11,7 +11,8 @@ export default function Popup(props) {
     }, [props.visibility]);
 
     return (
-        <div className={`popup ${isVisible? 'popup_visible' : ''} ${props.btn? 'popup_forbtn' : ''}`} onClick={() => setVisible(false)}>
+        <div className={`popup ${isVisible? 'popup_visible' : ''} ${props.button? 'popup_button' : ''}`}
+             onClick={() => setVisible(false)}>
             {props.children}
         </div>
     )

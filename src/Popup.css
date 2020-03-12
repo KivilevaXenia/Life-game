@@ -13,12 +13,8 @@
     z-index: 1;
 }
 
-.popup_visible {
-    display: block;
-}
-
 .popup::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 25%;
     left: 100%;
@@ -28,27 +24,17 @@
     border-color: transparent transparent transparent #434343;
 }
 
-.popup_forbtn {
-    width: 200px;
-    height: 50px;
-    background-color: #434343;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    padding: 15px;
-    position: absolute;
-    left: 57%;
-    top: 85%;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 0 #6a6a6a;
+.popup_visible {
+    display: block;
 }
 
-.popup_forbtn::after {
-    content: "";
-    position: absolute;
+.popup_button {
+    left: 57%;
+    top: 85%;
+}
+
+.popup_button::after {
     top: -15%;
     left: 18%;
-    margin-left: 0;
-    border-width: 7px;
-    border-style: solid;
     border-color: transparent transparent #434343 transparent;
 }

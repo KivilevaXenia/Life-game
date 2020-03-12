@@ -6,17 +6,9 @@ button {
     font-size: 100%;
 }
 
-.size {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    text-align:center;
-}
-
-.speed  {
-    width: 40px;
-    height: 30px;
-    text-align:center;
+.App {
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -44,6 +36,13 @@ button {
     position: relative;
 }
 
+.menu button {
+     width: 100px;
+     height: fit-content;
+     align-self: center;
+     padding: 5px;
+ }
+
 .filter {
     margin: 5px;
     display: flex;
@@ -59,16 +58,17 @@ button {
     border-radius: 50% 50%;
 }
 
-.menu button {
-    width: 100px;
-    height: fit-content;
-    align-self: center;
-    padding: 5px;
+.size {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-align:center;
 }
 
-.App {
-    display: flex;
-    flex-direction: column;
+.speed  {
+    width: 40px;
+    height: 30px;
+    text-align:center;
 }
 
 .content {
@@ -78,4 +78,3 @@ button {
     width: fit-content;
     align-self: center;
 }
-
