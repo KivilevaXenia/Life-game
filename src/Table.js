@@ -174,7 +174,13 @@ export default function Table(props) {
         return width.map(function() {
             count++;
             let number = count+(index*props.width);
-            return <Button onClick={(function(count, index) { return function() { changeSquare(count, index) }})(count, index)}
+            return <Button onClick={
+                                (function(count, index) {
+                                    return function() {
+                                        changeSquare(count, index);
+                                        props.onClick()
+                                    }
+                                })(count, index)}
                            number={number}
                            count = {count}
                            index={index}

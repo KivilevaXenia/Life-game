@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Table from './Table';
+import Popup from "./Popup";
 
 function App() {
     const [isLaunched, setLaunch] = useState(false);
@@ -10,10 +11,7 @@ function App() {
     const [length, setLength] = useState(4);
     const [width, setWidth] = useState(4);
     const [speed, setSpeed] = useState(500);
-
-    let setNoClear = function() {
-        setClear(false)
-    };
+    const [visibility, setVisibility] = useState(true);
 
     return (
         <div className='App'>
@@ -34,16 +32,27 @@ function App() {
                 </div>
 
                 <button onClick={() => setLaunch(!isLaunched)}>{buttonName}</button>
+                <Popup btn={true} visibility={!isLaunched}>
+                    Click 'Start' to see the magic!
+                </Popup>
                 <button onClick={() => setClear(true)}>Clear</button>
             </div>
-            <Table id='table'
-                isLaunched={isLaunched}
-                isClear={clear}
-                setClear={setNoClear}
-                length={length}
-                width={width}
-                speed={speed}
-            />
+            <div className='content'>
+                <Popup visibility={visibility}>
+                    Click on squares to fill them.
+                </Popup>
+                <Table id='table'
+                    isLaunched={isLaunched}
+                    isClear={clear}
+                    setClear={() => setClear(false)}
+                    length={length}
+                    width={width}
+                    speed={speed}
+                    onClick={() => {
+                        setVisibility(false)
+                    }}
+                />
+            </div>
         </div>
     );
 }

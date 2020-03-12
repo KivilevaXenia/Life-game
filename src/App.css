@@ -40,7 +40,8 @@ button {
     padding: 1% 20%;
     box-shadow: 0 0 10px 0 #6a6a6a;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .filter {
@@ -69,3 +70,12 @@ button {
     display: flex;
     flex-direction: column;
 }
+
+.content {
+    justify-content: center;
+    display: flex;
+    position: relative;
+    width: fit-content;
+    align-self: center;
+}
+
