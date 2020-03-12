@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br />
 ##Demo
 <br />
-[Life-Game](https://KivilevaXenia.github.io)
+[Life-Game](https://kivilevaxenia.github.io/lifegame/)
