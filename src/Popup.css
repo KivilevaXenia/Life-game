@@ -10,6 +10,7 @@
     border-radius: 20px;
     box-shadow: 0 0 10px 0 #6a6a6a;
     display: none;
+    z-index: 1;
 }
 
 .popup_visible {
